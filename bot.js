@@ -46,3 +46,11 @@ async function sendPriceUpdate() {
         sendPriceUpdate();
     }, 180000);
 })();
+
+const PORT = process.env.PORT || 3000;
+http.createServer((req, res) => {
+  res.writeHead(200, { "Content-Type": "text/plain" });
+  res.end("Telegram bot is running.\n");
+}).listen(PORT, () => {
+  console.log(`Server is listening on port ${PORT}`);
+});
